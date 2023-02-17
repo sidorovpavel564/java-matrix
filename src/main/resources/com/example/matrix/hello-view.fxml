@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.matrix.HelloController">
+    <children>
+        <ButtonBar layoutX="62.0" layoutY="268.0" prefHeight="25.0" prefWidth="21.0" />
+        <Button fx:id="createMatrix1" layoutX="11.0" layoutY="10.0" mnemonicParsing="false" onAction="#createMatrix1" text="Create Matrix 1" />
+        <Button fx:id="createMatrix2" layoutX="558.0" layoutY="10.0" mnemonicParsing="false" onAction="#createMatrix2" text="Create Matrix 2" />
+        <TextField layoutX="111.0" layoutY="10.0" prefWidth="50.0" fx:id="x1" />
+        <Text layoutX="172.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" />
+        <TextField fx:id="y1" layoutX="192.0" layoutY="10.0" prefWidth="50.0" />
+        <TextField layoutX="658.0" layoutY="10.0" prefWidth="50.0" fx:id="x2" />
+        <Text layoutX="719.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" />
+        <TextField fx:id="y2" layoutX="739.0" layoutY="10.0" prefWidth="50.0" />
+        <Button fx:id="deleteFirstRow1" layoutX="12.0" layoutY="402.0" mnemonicParsing="false" onAction="#deleteFirstRow1" prefWidth="100.0" text="DeleteFirstRow" />
+        <Button fx:id="deleteLastRow1" layoutX="12.0" layoutY="427.0" mnemonicParsing="false" onAction="#deleteLastRow1" prefWidth="100.0" text="DeleteLastRow" />
+        <Button fx:id="deleteFirstCol1" layoutX="12.0" layoutY="452.0" mnemonicParsing="false" onAction="#deleteFirstCol1" prefWidth="100.0" text="DeleteFirstCol" />
+        <Button fx:id="deleteLastCol1" layoutX="12.0" layoutY="477.0" mnemonicParsing="false" onAction="#deleteLastCol1" prefWidth="100.0" text="DeleteLastCol" />
+        <Button fx:id="deleteFirstRow2" layoutX="614.0" layoutY="402.0" mnemonicParsing="false" onAction="#deleteFirstRow2" prefWidth="100.0" text="DeleteFirstRow" />
+        <Button fx:id="deleteLastRow2" layoutX="614.0" layoutY="427.0" mnemonicParsing="false" onAction="#deleteLastRow2" prefWidth="100.0" text="DeleteLastRow" />
+        <Button fx:id="deleteFirstCol2" layoutX="614.0" layoutY="452.0" mnemonicParsing="false" onAction="#deleteFirstCol2" prefWidth="100.0" text="DeleteFirstCol" />
+        <Button fx:id="deleteLastCol2" layoutX="614.0" layoutY="477.0" mnemonicParsing="false" onAction="#deleteLastCol2" prefWidth="100.0" text="DeleteLastCol" />
+        <TextArea fx:id="result" editable="false" layoutX="275.0" layoutY="402.0" minHeight="250.0" prefWidth="250.0" wrapText="false" />
+        <Button fx:id="addition" layoutX="368.0" layoutY="143.0" mnemonicParsing="false" onAction="#addition" prefHeight="30.0" prefWidth="30.0" text="+" />
+        <Button fx:id="subtraction" layoutX="403.0" layoutY="143.0" mnemonicParsing="false" onAction="#subtraction" prefHeight="30.0" prefWidth="30.0" text="-" />
+        <Button fx:id="multiplication" layoutX="368.0" layoutY="178.0" mnemonicParsing="false" onAction="#multiplication" prefHeight="30.0" prefWidth="30.0" text="X" />
+        <Button fx:id="division" layoutX="403.0" layoutY="178.0" mnemonicParsing="false" onAction="#division" prefHeight="30.0" prefWidth="30.0" text="/" />
+        <Text layoutX="384.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Result" />
+        <Button fx:id="deleteRowByIndex1" layoutX="12.0" layoutY="337.0" mnemonicParsing="false" onAction="#deleteRowByIndex1" prefWidth="100.0" text="DeleteRow" />
+        <Button fx:id="deleteColByIndex1" layoutX="12.0" layoutY="366.0" mnemonicParsing="false" onAction="#deleteColByIndex1" prefWidth="100.0" text="DeleteCol" />
+        <TextField fx:id="rowIndex1" layoutX="136.0" layoutY="337.0" prefWidth="50.0" />
+        <TextField fx:id="colIndex1" layoutX="136.0" layoutY="366.0" prefWidth="50.0" />
+        <Button fx:id="deleteRowByIndex2" layoutX="614.0" layoutY="339.0" mnemonicParsing="false" onAction="#deleteRowByIndex2" prefWidth="100.0" text="DeleteRow" />
+        <Button fx:id="deleteColByIndex2" layoutX="614.0" layoutY="368.0" mnemonicParsing="false" onAction="#deleteColByIndex2" prefWidth="100.0" text="DeleteCol" />
+        <TextField fx:id="rowIndex2" layoutX="736.0" layoutY="339.0" prefWidth="50.0" />
+        <TextField fx:id="colIndex2" layoutX="736.0" layoutY="368.0" prefWidth="50.0" />
+        <TextArea fx:id="matrix1Text" layoutX="11.0" layoutY="50.0" prefHeight="250.0" prefWidth="250.0" wrapText="false" />
+        <TextArea fx:id="matrix2Text" layoutX="539.0" layoutY="50.0" prefHeight="250.0" prefWidth="250.0" wrapText="false" />
+        <Text layoutX="123.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" />
+        <Text layoutX="123.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" />
+        <Text layoutX="725.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" />
+        <Text layoutX="725.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" />
+        <Button fx:id="addRow1" layoutX="12.0" layoutY="527.0" mnemonicParsing="false" onAction="#addRowByIndex1" prefWidth="100.0" text="AddRow" />
+        <Button fx:id="addCol1" layoutX="12.0" layoutY="552.0" mnemonicParsing="false" onAction="#addColumnByIndex1" prefWidth="100.0" text="AddCol" />
+        <TextField fx:id="addRowIndex1" layoutX="136.0" layoutY="527.0" prefWidth="50.0" />
+        <Text layoutX="122.0" layoutY="544.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" />
+        <TextField fx:id="addColIndex1" layoutX="136.0" layoutY="552.0" prefWidth="50.0" />
+        <Text layoutX="122.0" layoutY="569.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" />
+        <Button fx:id="addRow2" layoutX="614.0" layoutY="527.0" mnemonicParsing="false" onAction="#addRowByIndex2" prefWidth="100.0" text="AddRow" />
+        <Button fx:id="addCol2" layoutX="614.0" layoutY="552.0" mnemonicParsing="false" onAction="#addColumnByIndex2" prefWidth="100.0" text="AddCol" />
+        <TextField fx:id="addRowIndex2" layoutX="738.0" layoutY="527.0" prefWidth="50.0" />
+        <Text layoutX="724.0" layoutY="544.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" />
+        <TextField fx:id="addColIndex2" layoutX="738.0" layoutY="552.0" prefWidth="50.0" />
+        <Text layoutX="724.0" layoutY="569.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" />
+        <Button fx:id="changeElementByIndex1" layoutX="129.0" layoutY="685.0" mnemonicParsing="false" onAction="#changeElementByIndex1" prefWidth="100.0" text="ChangeElement" />
+        <TextField fx:id="elementIndexX1" layoutX="14.0" layoutY="685.0" prefWidth="50.0" />
+        <TextField fx:id="elementIndexY1" layoutX="73.0" layoutY="685.0" prefWidth="50.0" />
+        <TextField fx:id="elementValue1" layoutX="236.0" layoutY="685.0" prefWidth="50.0" />
+        <Text layoutX="35.0" layoutY="681.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" />
+        <Text layoutX="95.0" layoutY="681.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Y" />
+        <Text layoutX="246.0" layoutY="681.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Value" />
+        <Button fx:id="changeElementByIndex2" layoutX="629.0" layoutY="685.0" mnemonicParsing="false" onAction="#changeElementByIndex2" prefWidth="100.0" text="ChangeElement" />
+        <TextField fx:id="elementIndexX2" layoutX="514.0" layoutY="685.0" prefWidth="50.0" />
+        <TextField fx:id="elementIndexY2" layoutX="573.0" layoutY="685.0" prefWidth="50.0" />
+        <TextField fx:id="elementValue2" layoutX="736.0" layoutY="685.0" prefWidth="50.0" />
+        <Text layoutX="535.0" layoutY="681.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" />
+        <Text layoutX="595.0" layoutY="681.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Y" />
+        <Text layoutX="746.0" layoutY="681.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Value" />
+        <Button fx:id="fillRnd1" layoutX="261.0" layoutY="10.0" mnemonicParsing="false" onAction="#fillRnd1" text="Fill Rnd" />
+        <Button fx:id="FillRndDotZero1" layoutX="275.0" layoutY="50.0" mnemonicParsing="false" onAction="#FillRndDotZero1" text="Fill Rnd.0" />
+        <Button fx:id="fillRnd2" layoutX="487.0" layoutY="9.0" mnemonicParsing="false" onAction="#fillRnd2" text="Fill Rnd" />
+        <Button fx:id="FillRndDotZero2" layoutX="461.0" layoutY="50.0" mnemonicParsing="false" onAction="#FillRndDotZero2" text="Fill Rnd.0" />
+        <Button fx:id="Determinant1" layoutX="275.0" layoutY="227.0" mnemonicParsing="false" onAction="#determinant1" text="Determinant" />
+        <Button fx:id="Inverse1" layoutX="275.0" layoutY="256.0" mnemonicParsing="false" onAction="#inverse1" text="Inverse" />
+        <Button fx:id="Determinant2" layoutX="446.0" layoutY="227.0" mnemonicParsing="false" onAction="#determinant2" text="Determinant" />
+        <Button fx:id="Inverse2" layoutX="475.0" layoutY="256.0" mnemonicParsing="false" onAction="#inverse2" text="Inverse" />
+        <Button fx:id="Submit1" layoutX="280.0" layoutY="83.0" mnemonicParsing="false" onAction="#submit1" text="Submit" />
+        <Button fx:id="Submit2" layoutX="466.0" layoutY="83.0" mnemonicParsing="false" onAction="#submit2" text="Submit" />
+        <Button fx:id="addElementByIndex1" layoutX="157.0" layoutY="718.0" mnemonicParsing="false" onAction="#addElementByIndex1" text="Add" />
+        <Button fx:id="delElementByIndex1" layoutX="159.0" layoutY="749.0" mnemonicParsing="false" onAction="#delElementByIndex1" text="Del" />
+        <Button fx:id="addElementByIndex2" layoutX="660.0" layoutY="718.0" mnemonicParsing="false" onAction="#addElementByIndex2" text="Add" />
+        <Button fx:id="delElementByIndex2" layoutX="662.0" layoutY="749.0" mnemonicParsing="false" onAction="#delElementByIndex2" text="Del" />
+    </children>
+</AnchorPane>
