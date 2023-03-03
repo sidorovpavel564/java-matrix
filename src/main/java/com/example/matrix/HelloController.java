@@ -221,17 +221,62 @@ public class HelloController {
 
     @FXML
     protected void delElementByIndex1() {
-
+        try {
+            try {
+                result.setText("");
+                matrix1.delElementByIndex(Integer.parseInt(elementIndexX1.getText()),
+                        Integer.parseInt(elementIndexY1.getText()));
+                matrix1Text.setText(matrix1.toString());
+            } catch (MatrixException e) {
+                result.setText(e.cause());
+            }
+        }
+        catch (NumberFormatException e) {
+            result.setText("""
+                    Нужно ввести индекс элемента (строка, колонка) и его значеие.\s
+                    Только число.
+                    Разделителем дробной части от целой должна являтся точка.""");
+        }
     }
 
     @FXML
     protected void addElementByIndex2() {
-
+        try {
+            try {
+                result.setText("");
+                matrix2.addElementByIndex(Integer.parseInt(elementIndexX2.getText()),
+                        Integer.parseInt(elementIndexY2.getText()), Double.parseDouble(elementValue2.getText()));
+                matrix2Text.setText(matrix2.toString());
+            } catch (MatrixException e) {
+                result.setText(e.cause());
+            }
+        }
+        catch (NumberFormatException e) {
+            result.setText("""
+                    Нужно ввести индекс элемента (строка, колонка) и его значеие.\s
+                    Только число.
+                    Разделителем дробной части от целой должна являтся точка.""");
+        }
     }
 
     @FXML
     protected void delElementByIndex2() {
-
+        try {
+            try {
+                result.setText("");
+                matrix2.delElementByIndex(Integer.parseInt(elementIndexX2.getText()),
+                        Integer.parseInt(elementIndexY2.getText()));
+                matrix2Text.setText(matrix2.toString());
+            } catch (MatrixException e) {
+                result.setText(e.cause());
+            }
+        }
+        catch (NumberFormatException e) {
+            result.setText("""
+                    Нужно ввести индекс элемента (строка, колонка) и его значеие.\s
+                    Только число.
+                    Разделителем дробной части от целой должна являтся точка.""");
+        }
     }
 
     @FXML

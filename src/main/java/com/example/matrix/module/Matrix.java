@@ -58,18 +58,84 @@ public class Matrix {
     public void addElementByIndex(int row_index, int column_index, Double element) throws MatrixException {
         if (row_index <= -1 || column_index <= -1) {
             throw new MatrixException("Индексы должны быть положительные.");
-        } else if (row_index < this.rows) {
-            addRowByIndex(row_index);
-            changeElementByIndex(row_index, column_index, element);
-        } else if (row_index == this.rows) {
-            addRowByIndex(row_index);
-            changeElementByIndex(row_index, column_index, element);
-        } else if (row_index > this.rows) {
+        }
+
+        if (row_index >= this.rows) {
             while (row_index >= this.rows) {
                 addRowByIndex(this.rows);
                 System.out.println("Row added.");
             }
-            changeElementByIndex(row_index, column_index, element);
+        }
+
+        if (column_index >= this.columns) {
+            while (column_index >= this.columns) {
+                addColumnByIndex(this.columns);
+                System.out.println("Column added.");
+            }
+        }
+
+
+//        if (row_index <= this.rows) {
+//            addRowByIndex(row_index);
+//            System.out.println("1 row added.");
+//        } else { //row_index > this.rows
+//            while (row_index >= this.rows) {
+//                addRowByIndex(this.rows);
+//                System.out.println("Row added.");
+//            }
+//        }
+//
+//        if (column_index <= this.columns) {
+//            addColumnByIndex(column_index);
+//            System.out.println("1 column added.");
+//        } else { //column_index > this.columns
+//            while (column_index >= this.columns) {
+//                addColumnByIndex(this.columns);
+//                System.out.println("Column added.");
+//            }
+//        }
+        changeElementByIndex(row_index, column_index, element);
+        System.out.println("Element value changed.");
+    }
+
+    public void delElementByIndex(int row_index, int column_index) throws MatrixException {
+        if (row_index <= -1 || column_index <= -1) {
+            throw new MatrixException("Индексы должны быть положительные.");
+        }
+        if (row_index >= this.rows || column_index >= this.columns) {
+            throw new MatrixException("Введёны неверные индексы. (Счёт индексов начинается с 0)");
+        }
+        boolean row_flag = true;
+        boolean col_flag = true;
+        for (int i = 0; i < this.columns; i++) {
+            if (matrix[row_index][i] != 0.0) {
+                continue;
+            } else {
+                row_flag = false;
+                break;
+            }
+        }
+
+        for (int i = 0; i < this.rows; i++) {
+            if (matrix[i][column_index] != 0) {
+                continue;
+            } else {
+                col_flag = false;
+                break;
+            }
+        }
+        
+        if (row_flag && col_flag) {
+            changeElementByIndex(row_index, column_index, 0.0);
+        } else {
+            if (!row_flag && !col_flag) {
+                removeRowByIndex(row_index);
+                removeColumnByIndex(column_index);
+            } else if (!row_flag) {
+                removeRowByIndex(row_index);
+            } else if (!col_flag) {
+                removeColumnByIndex(column_index);
+            }
         }
     }
 
@@ -410,7 +476,7 @@ public class Matrix {
         StringBuilder sb = new StringBuilder();
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < columns; col++) {
-                sb.append(matrix[row][col]).append(" ");
+                sb.append(matrix[row][col]).append(" | ");
             }
             sb.append("\n");
         }
