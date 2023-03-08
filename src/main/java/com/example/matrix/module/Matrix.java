@@ -109,34 +109,45 @@ public class Matrix {
         boolean col_flag = true;
         for (int i = 0; i < this.columns; i++) {
             if (matrix[row_index][i] != 0.0) {
-                continue;
+                if (i != column_index) {
+                    row_flag = false;
+                    break;
+                }
             } else {
-                row_flag = false;
-                break;
+                continue;
             }
         }
 
         for (int i = 0; i < this.rows; i++) {
-            if (matrix[i][column_index] != 0) {
-                continue;
+            if (matrix[i][column_index] != 0.0) {
+                if (i != column_index) {
+                    col_flag = false;
+                    break;
+                }
             } else {
-                col_flag = false;
-                break;
+                continue;
             }
         }
         
-        if (row_flag && col_flag) {
+        if (!row_flag && !col_flag) {
             changeElementByIndex(row_index, column_index, 0.0);
         } else {
-            if (!row_flag && !col_flag) {
+            if (row_flag && col_flag) {
                 removeRowByIndex(row_index);
                 removeColumnByIndex(column_index);
-            } else if (!row_flag) {
+            } else if (row_flag) {
                 removeRowByIndex(row_index);
-            } else if (!col_flag) {
+            } else if (col_flag) {
                 removeColumnByIndex(column_index);
             }
         }
+
+//        if (row_flag && col_flag) {
+//            removeRowByIndex(row_index);
+//            removeColumnByIndex(column_index);
+//        } else {
+//            changeElementByIndex(row_index, column_index, 0.0);
+//        }
     }
 
     public static Matrix parse(String str) throws MatrixException {
